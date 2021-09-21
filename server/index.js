@@ -3,7 +3,6 @@ const app = express();
 const http = require("http");
 const cors = require("cors");
 const {Server} = require("socket.io") 
-
 app.use(cors());
 
 const server = http.createServer(app);
@@ -30,10 +29,7 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("User Disconnected", socket.id);
     });
-
 });
-
-
 
 server.listen(3001, () => {
     console.log("Server running on : 3001")
